@@ -73,9 +73,9 @@
                                <div class="form-line">
                                     <select name="level" class="form-control show-tick">
                                         <option value="">-- Pilih Level --</option>
-										 <option value="superadmin">Super Admin</option>
-                                        <option value="admin">Admin</option>
-                                        <option value="petugas">Petugas</option>
+										 <option value="superadmin" <?php if($tampil['level'] == 'superadmin'){ echo 'selected'; } ?>>Admin Pengelola</option>
+                                        <option value="admin" <?php if($tampil['level'] == 'admin'){ echo 'selected'; } ?>>Pimpinan</option>
+                                        <option value="petugas" <?php if($tampil['level'] == 'petugas'){ echo 'selected'; } ?>>Petugas</option>
                      
                                     </select>
                             </div>

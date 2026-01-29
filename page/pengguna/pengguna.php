@@ -50,9 +50,9 @@
 								
 											<!-- <td><?php echo $data['password'] ?></td> -->
 											<td><?php 
-                      if($data['level'] == 'superadmin'){
+                      if($data['level'] == 'admin'){
                         echo 'Pimpinan';
-                      }elseif($data['level'] == 'admin'){
+                      }elseif($data['level'] == 'superadmin'){
                         echo 'Admin Pengelola';
                       }else{
                         echo $data['level']; 
