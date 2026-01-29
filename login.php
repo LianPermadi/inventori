@@ -64,22 +64,13 @@
 						<input type="password" name="password" class="form-control" value="" placeholder="Password" required autofocus />
 					</div>
 					<div class="form-group">
-						<select name="level" class="form-control" required>
-							<option value="">Pilih Level User</option>
-							<option selected value="superadmin">Super Admin</option>
-							<option value="admin">Admin</option>
-							<option value="petugas">Petugas</option>
-
-						</select>
-					</div>
-					<div class="form-group">
 						<input type="submit" name="login" class="btn btn-primary btn-block" value="Log in" />
 
 					</div>
 						<br>
 
 				</form>
-				<br><center><p>Repost by <a href='https://stokcoding.com/' title='StokCoding.com' target='_blank'>StokCoding.com</a></p></center>
+				<br><center><p>Login Kementerian Keuangan Timor Leste</a></p></center>
 
 
 			</div>
@@ -107,17 +98,17 @@
 						if ($ketemu >= '1') {
 							session_start();
 
-							if ($data['level'] == 'superadmin' && $level == 'superadmin') {
+							if ($data['level'] == 'superadmin') {
 								$_SESSION['superadmin'] =$data['id'];
 
 								header("location:index3.php");
 							}
-							else if ($data['level'] == 'admin' && $level == 'admin') {
+							else if ($data['level'] == 'admin') {
 								$_SESSION['admin'] =$data['id'];
 
 								header("location:index.php");
 							}
-							else if ($data['level'] == 'petugas' && $level == 'petugas') {
+							else if ($data['level'] == 'petugas') {
 								$_SESSION['petugas'] =$data['id'];
 
 								header("location:index2.php");

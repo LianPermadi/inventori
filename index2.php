@@ -90,7 +90,7 @@ mysqli_report (MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 		 <li class="nav-item ">
         <a class="nav-link">
          	<div class="d-flex align-items-center justify-content-center" class="name">  <?php echo  $data['nama'];?></div></font>
-			<div class="d-flex align-items-center justify-content-center" class="email">Anda adalah <?php echo $data['level'];?></div>
+			<div class="d-flex align-items-center justify-content-center" class="email"><?php echo $data['level'];?></div>
 		 </a>
       </li>
 	
@@ -345,7 +345,7 @@ mysqli_report (MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2019 | Repost by <a href='https://stokcoding.com/' title='StokCoding.com' target='_blank'>StokCoding.com</a>
+            <span>Copyright &copy; Kementerian Keuangan Timor Leste
             </span>
           </div>
         </div>

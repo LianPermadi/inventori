@@ -17,7 +17,7 @@
                 <thead>
                                         <tr>
 											<th>No</th>
-											<th>NIK</th>
+											<th>ID Pegawai</th>
 											<th>Nama</th>
 											
 											<th>Telepon</th>
@@ -49,7 +49,15 @@
                                             <td><?php echo $data['username'] ?></td>
 								
 											<!-- <td><?php echo $data['password'] ?></td> -->
-											<td><?php echo $data['level'] ?></td>
+											<td><?php 
+                      if($data['level'] == 'superadmin'){
+                        echo 'Pimpinan';
+                      }elseif($data['level'] == 'admin'){
+                        echo 'Admin Pengelola';
+                      }else{
+                        echo $data['level']; 
+                      }
+                      ?></td>
 											<td><img src="img/<?php echo $data['foto'] ?>"width="50" height="50" alt=""> </td>
 										
 											<td>

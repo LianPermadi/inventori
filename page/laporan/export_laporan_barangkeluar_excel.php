@@ -12,14 +12,16 @@ if (isset($_POST['submit']))
 	header("Content-type: application/vnd-ms-excel");
 	header("Content-Disposition: attachment; filename=Laporan_Barang_Keluar (".date('d-m-Y').").xls");
 	
-	$bln = $_POST['bln'] ;
-	$thn = $_POST['thn'] ;
+	// $bln = $_POST['bln'] ;
+	// $thn = $_POST['thn'] ;
+$tgl_awal  = $_POST['tgl_awal'];
+$tgl_akhir = $_POST['tgl_akhir'];
 
 ?>	
 
 <body>
 <center>
-<h2>Laporan Barang Keluar Bulan <?php echo $bln;?> Tahun <?php echo $thn;?></h2>
+<h2>Laporan Barang Keluar Dari tanggal <?php echo $tgl_awal;?> Tahun <?php echo $tgl_akhir;?></h2>
 </center>
 <table border="1">
   <tr>
@@ -34,10 +36,15 @@ if (isset($_POST['submit']))
                                         </tr>
 	
 
-                    <?php 
-									
+                    <?php 	
 									$no = 1;
-									$sql = $koneksi->query("select * from barang_keluar where MONTH(tanggal) = '$bln' and YEAR(tanggal) = '$thn'");
+									
+$sql = $koneksi->query( "
+    SELECT *
+    FROM barang_keluar
+    WHERE tanggal BETWEEN '$tgl_awal' AND '$tgl_akhir'
+");
+									// $sql = $koneksi->query("select * from barang_keluar where MONTH(tanggal) = '$bln' and YEAR(tanggal) = '$thn'");
 									while ($data = $sql->fetch_assoc()) {
 										
 									?>

@@ -9,7 +9,7 @@
             <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
            
           </div>
-			<marquee><h2>Selamat Datang di Sistem Informasi Inventory Barang | Repost by <a href='https://stokcoding.com/' title='StokCoding.com' target='_blank'>StokCoding.com</a>
+			<marquee><h2>Selamat Datang di Sistem Informasi Inventory Barang | Kementerian Keuangan Timor Leste
       </marquee></h2>
 		  <br></br>
           <!-- Content Row -->

@@ -13,7 +13,7 @@
 							
 							<form method="POST" enctype="multipart/form-data">
 							
-							<label for="">NIK</label>
+							<label for="">ID pegawai</label>
                             <div class="form-group">
                                <div class="form-line">
                                 <input type="number" name="nik" class="form-control" />	 
@@ -63,7 +63,7 @@
                                     <select name="level" class="form-control show-tick">
                                         <option value="">-- Pilih Level --</option>
 									
-                                        <option value="admin">Admin</option>
+                                        <option value="admin">Admin Pengelola</option>
                                         <option value="petugas">Petugas</option>
                      
                                     </select>

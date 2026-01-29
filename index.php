@@ -92,7 +92,7 @@ mysqli_report (MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 		 <li class="nav-item ">
         <a class="nav-link">
          	<div class="d-flex align-items-center justify-content-center" class="name">  <?php echo  $data['nama'];?></div></font>
-			<div class="d-flex align-items-center justify-content-center" class="email">Anda adalah <?php echo $data['level'];?></div>
+			<div class="d-flex align-items-center justify-content-center" class="email">Pimpinan</div>
 		 </a>
       </li>
 	
@@ -108,59 +108,7 @@ mysqli_report (MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
       <!-- Divider -->
       <hr class="sidebar-divider">
-
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        Pilih Menu
-      </div>
 	 
-      <!-- Nav Item - Pages Collapse Menu -->
-	  
-	  
-	    <li class="nav-item active">
-        <a class="nav-link" href="?page=pengguna">
-          <i class="fas fa-fw fa-home"></i>
-          <span>Data Pengguna</span></a>
-      </li>
-	  
-	  
-	   <li class="nav-item active">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseData" aria-expanded="true" aria-controls="collapseData">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Data Master</span>
-        </a>
-        <div id="collapseData" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Menu:</h6>
-            <a class="collapse-item" href="?page=gudang">Data Barang</a>
-            <a class="collapse-item" href="?page=jenisbarang">Jenis Barang</a>
-            <a class="collapse-item" href="?page=satuanbarang">Satuan Barang</a>
-			 <a class="collapse-item" href="?page=supplier">Data Supplier</a>
-           
-          </div>
-        </div>
-      </li>
-	  
-	
-	  
-	    <li class="nav-item active">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Transaksi</span>
-        </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Menu:</h6>
-            <a class="collapse-item" href="?page=barangmasuk">Barang Masuk</a>
-            <a class="collapse-item" href="?page=barangkeluar">Barang Keluar</a>
-           
-           
-          </div>
-        </div>
-      </li>
-
-	  
-	  
 	      <!-- Heading -->
       <div class="sidebar-heading">
         Laporan
@@ -402,7 +350,7 @@ mysqli_report (MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2019 | Repost by <a href='https://stokcoding.com/' title='StokCoding.com' target='_blank'>StokCoding.com</a>
+            <span>Copyright &copy; Kementerian Keuangan Timor Leste
             </span>
           </div>
         </div>

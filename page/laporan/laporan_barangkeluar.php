@@ -14,91 +14,35 @@
             <div class="card-body">
 			
 			 
-	 	 	<table >
-        <tr><td>
-            LAPORAN PERBULAN DAN PERTAHUN
-        </td></tr>
-        <tr>
-            <td width="50%">
-<form action="page/laporan/export_laporan_barangkeluar_excel.php" method="post">
-	<div class="row form-group">
+<table>
+    <tr>
+        <td>LAPORAN BERDASARKAN TANGGAL</td>
+    </tr>
+    <tr>
+        <td width="50%">
+            <form action="page/laporan/export_laporan_barangkeluar_excel.php" method="post">
+                <div class="row form-group">
 
-		<div class="col-md-5">
-		<select class="form-control " name="bln">
-							
-							
-    						<option value="1" selected="">January</option>
-    						<option value="2">February</option>
-    						<option value="3">March</option>
-    						<option value="4">April</option>
-    						<option value="5">May</option>
-    						<option value="6">June</option>
-    						<option value="7">July</option>
-    						<option value="8">August</option>
-    						<option value="9">September</option>
-    						<option value="10">October</option>
-    						<option value="11">November</option>
-    						<option value="12">December</option>
-        			</select>
-        		</div>
-        		<div class="col-md-3">
-        		<?php
-$now=date('Y');
-echo "<select name='thn' class='form-control'>";
-for ($a=2018;$a<=$now;$a++)
-{
-     echo "<option value='$a'>$a</option>";
-}
-echo "</select>";
-?>
-</div>
-        
-	<input type="submit" class="" name="submit" value="Export to Excel">
-	</div>
-	</form>
-	
-	
-	<form id="Myform2">
-    <div class="row form-group">
+                    <div class="col-md-4">
+                        <label>Dari Tanggal</label>
+                        <input type="date" name="tgl_awal" class="form-control" required>
+                    </div>
 
-        <div class="col-md-5">
-        <select class="form-control " name="bln">
-                            
-                            <option value="all" selected="">ALL</option>
-                            <option value="1">January</option>
-                            <option value="2">February</option>
-                            <option value="3">March</option>
-                            <option value="4">April</option>
-                            <option value="5">May</option>
-                            <option value="6">June</option>
-                            <option value="7">July</option>
-                            <option value="8">August</option>
-                            <option value="9">September</option>
-                            <option value="10">October</option>
-                            <option value="11">November</option>
-                            <option value="12">December</option>
-                    </select>
+                    <div class="col-md-4">
+                        <label>Sampai Tanggal</label>
+                        <input type="date" name="tgl_akhir" class="form-control" required>
+                    </div>
+
+                    <div class="col-md-4" style="margin-top:25px;">
+                        <input type="submit" name="submit" value="Export to Excel" class="btn btn-success">
+                    </div>
+
                 </div>
-                <div class="col-md-3">
-                <?php
-$now=date('Y');
-echo "<select name='thn' class='form-control'>";
-for ($a=2018;$a<=$now;$a++)
-{
-     echo "<option value='$a'>$a</option>";
-}
-echo "</select>";
-?>
-</div>
+            </form>
+        </td>
+    </tr>
+</table>
 
-
-    <input type="submit" class="" name="submit2"  value="Tampilkan">
-    </div>
-    </form>
-    </td>
-    
-          
-   </table>
 	
 	<div class="tampung2">
 			

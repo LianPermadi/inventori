@@ -17,7 +17,7 @@
                 <thead>
                                         <tr>
 											<th>No</th>
-											<th>NIK</th>
+											<th>ID Pegawai</th>
 											<th>Nama</th>
 											
 											<th>Telepon</th>
