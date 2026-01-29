@@ -14,34 +14,34 @@
             <div class="card-body">
 			
 			 
-<table>
-    <tr>
-        <td>LAPORAN BERDASARKAN TANGGAL</td>
-    </tr>
-    <tr>
-        <td width="50%">
-            <form action="page/laporan/export_laporan_barangkeluar_excel.php" method="post">
-                <div class="row form-group">
+<form id="Myform2" method="post">
+    <div class="row form-group">
 
-                    <div class="col-md-4">
-                        <label>Dari Tanggal</label>
-                        <input type="date" name="tgl_awal" class="form-control" required>
-                    </div>
+        <div class="col-md-3">
+            <label>Dari Tanggal</label>
+            <input type="date" name="tgl_awal" class="form-control" required>
+        </div>
 
-                    <div class="col-md-4">
-                        <label>Sampai Tanggal</label>
-                        <input type="date" name="tgl_akhir" class="form-control" required>
-                    </div>
+        <div class="col-md-3">
+            <label>Sampai Tanggal</label>
+            <input type="date" name="tgl_akhir" class="form-control" required>
+        </div>
 
-                    <div class="col-md-4" style="margin-top:25px;">
-                        <input type="submit" name="submit" value="Export to Excel" class="btn btn-success">
-                    </div>
+        <div class="col-md-6" style="margin-top:25px;">
+            <button type="submit" class="btn btn-info">
+                Tinjau Data
+            </button>
 
-                </div>
-            </form>
-        </td>
-    </tr>
-</table>
+            <button type="submit"
+                formaction="page/laporan/export_laporan_barangkeluar_excel.php"
+                formtarget="_blank"
+                class="btn btn-success">
+                Export Excel
+            </button>
+        </div>
+
+    </div>
+</form>
 
 	
 	<div class="tampung2">
