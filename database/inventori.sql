@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 10, 2021 at 10:07 PM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 5.6.40
+-- Waktu pembuatan: 29 Jan 2026 pada 16.03
+-- Versi server: 10.4.32-MariaDB
+-- Versi PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -25,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `barang_keluar`
+-- Struktur dari tabel `barang_keluar`
 --
 
 CREATE TABLE `barang_keluar` (
@@ -37,19 +36,20 @@ CREATE TABLE `barang_keluar` (
   `jumlah` varchar(100) NOT NULL,
   `tujuan` varchar(100) NOT NULL,
   `satuan` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `barang_keluar`
+-- Dumping data untuk tabel `barang_keluar`
 --
 
 INSERT INTO `barang_keluar` (`id`, `id_transaksi`, `tanggal`, `kode_barang`, `nama_barang`, `jumlah`, `tujuan`, `satuan`) VALUES
 (3, 'TRK-1219001', '2019-12-11', 'BAR-1219001', 'buku', '200', 'Tegal', 'Pack'),
 (4, 'TRK-1219002', '2019-12-11', 'BAR-1219002', 'Pensil', '19', 'bandung', 'Pack'),
-(5, 'TRK-1219003', '2019-12-11', 'BAR-1219003', 'Nutrisari', '2', 'Ciamis', 'PCS');
+(5, 'TRK-1219003', '2019-12-11', 'BAR-1219003', 'Nutrisari', '2', 'Ciamis', 'PCS'),
+(6, 'TRK-0126004', '2026-01-28', 'BAR-0126004', 'Gelas', '1', 'Di pakai untuk mencari uang', 'Pack');
 
 --
--- Triggers `barang_keluar`
+-- Trigger `barang_keluar`
 --
 DELIMITER $$
 CREATE TRIGGER `barang_keluar` AFTER INSERT ON `barang_keluar` FOR EACH ROW BEGIN
@@ -62,7 +62,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `barang_masuk`
+-- Struktur dari tabel `barang_masuk`
 --
 
 CREATE TABLE `barang_masuk` (
@@ -74,18 +74,20 @@ CREATE TABLE `barang_masuk` (
   `pengirim` varchar(100) NOT NULL,
   `jumlah` varchar(100) NOT NULL,
   `satuan` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `barang_masuk`
+-- Dumping data untuk tabel `barang_masuk`
 --
 
 INSERT INTO `barang_masuk` (`id`, `id_transaksi`, `tanggal`, `kode_barang`, `nama_barang`, `pengirim`, `jumlah`, `satuan`) VALUES
 (20, 'TRM-1219001', '2019-12-10', 'BAR-1219001', 'buku', 'PT Gading Murni', '10', 'Pack'),
-(21, 'TRM-1219002', '2019-12-11', 'BAR-1219003', 'Nutrisari', 'PT Sahabat Utama', '50', 'PCS');
+(21, 'TRM-1219002', '2019-12-11', 'BAR-1219003', 'Nutrisari', 'PT Sahabat Utama', '50', 'PCS'),
+(23, 'TRM-0126003', '2026-01-28', 'BAR-0126004', 'Gelas', 'PT Sahabat Utama', '12', ''),
+(24, 'TRM-0126003', '2026-01-29', 'BAR-0126004', 'Gelas', 'PT Gading Murni', '11', '');
 
 --
--- Triggers `barang_masuk`
+-- Trigger `barang_masuk`
 --
 DELIMITER $$
 CREATE TRIGGER `barang_masuk` AFTER INSERT ON `barang_masuk` FOR EACH ROW BEGIN
@@ -98,7 +100,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `gudang`
+-- Struktur dari tabel `gudang`
 --
 
 CREATE TABLE `gudang` (
@@ -108,62 +110,65 @@ CREATE TABLE `gudang` (
   `jenis_barang` varchar(100) NOT NULL,
   `jumlah` varchar(250) NOT NULL,
   `satuan` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `gudang`
+-- Dumping data untuk tabel `gudang`
 --
 
 INSERT INTO `gudang` (`id`, `kode_barang`, `nama_barang`, `jenis_barang`, `jumlah`, `satuan`) VALUES
 (14, 'BAR-1219001', 'buku', 'Alat Tulis', '33', 'Pack'),
 (15, 'BAR-1219002', 'Pensil', 'Alat Tulis', '60', 'Pack'),
-(16, 'BAR-1219003', 'Nutrisari', 'Minuman', '57', 'PCS');
+(16, 'BAR-1219003', 'Nutrisari', 'Minuman', '57', 'PCS'),
+(17, 'BAR-0126004', 'Gelas', 'Makanan', '22', 'Pack');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jenis_barang`
+-- Struktur dari tabel `jenis_barang`
 --
 
 CREATE TABLE `jenis_barang` (
   `id` int(11) NOT NULL,
   `jenis_barang` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `jenis_barang`
+-- Dumping data untuk tabel `jenis_barang`
 --
 
 INSERT INTO `jenis_barang` (`id`, `jenis_barang`) VALUES
 (5, 'Makanan'),
 (6, 'Minuman'),
-(7, 'Alat Tulis');
+(7, 'Alat Tulis'),
+(8, 'test');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `satuan`
+-- Struktur dari tabel `satuan`
 --
 
 CREATE TABLE `satuan` (
   `id` int(11) NOT NULL,
   `satuan` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `satuan`
+-- Dumping data untuk tabel `satuan`
 --
 
 INSERT INTO `satuan` (`id`, `satuan`) VALUES
 (5, 'Unit'),
 (7, 'PCS'),
 (8, 'Pack'),
-(9, 'Kg');
+(9, 'Kg'),
+(10, 'galon');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_supplier`
+-- Struktur dari tabel `tb_supplier`
 --
 
 CREATE TABLE `tb_supplier` (
@@ -172,21 +177,22 @@ CREATE TABLE `tb_supplier` (
   `nama_supplier` varchar(100) NOT NULL,
   `alamat` varchar(100) NOT NULL,
   `telepon` varchar(15) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `tb_supplier`
+-- Dumping data untuk tabel `tb_supplier`
 --
 
 INSERT INTO `tb_supplier` (`id`, `kode_supplier`, `nama_supplier`, `alamat`, `telepon`) VALUES
 (10, 'SUP-1219001', 'PT Sahabat Utama', 'Jakarta Barat', '085546982020'),
 (11, 'SUP-1219002', 'PT Surya Makmur', 'Tangerang', '081986700103'),
-(12, 'SUP-1219003', 'PT Gading Murni', 'Bandung', '082146982011');
+(12, 'SUP-1219003', 'PT Gading Murni', 'Bandung', '082146982011'),
+(13, 'SUP-0126004', 'PT. DPMPTSP JABAR', 'alamat Test', '083822039748');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -199,108 +205,108 @@ CREATE TABLE `users` (
   `password` varchar(100) NOT NULL,
   `level` varchar(25) NOT NULL DEFAULT 'member',
   `foto` varchar(25) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `users`
+-- Dumping data untuk tabel `users`
 --
 
 INSERT INTO `users` (`id`, `nik`, `nama`, `alamat`, `telepon`, `username`, `password`, `level`, `foto`) VALUES
-(18, '1900120001', 'Wilmar', '', '0811228890', 'wil', 'e39622164d485c2dc8970f518b0189cd', 'superadmin', 'terima-kasih.jpg'),
-(24, '1900120012', 'dimas', '', '085546982020', 'dimas', '7d49e40f4b3d8f68c19406a58303f826', 'admin', 'sad.jpg'),
-(25, '1900126005', 'aryamurti', '', '085546982011', 'arya', '5882985c8b1e2dce2763072d56a1d6e5', 'petugas', 'terima-kasih.jpg');
+(29, '110909829', 'Petugas Gudang', '', '083822039722', 'petugas', '570c396b3fc856eceb8aa7357f32af1a', 'petugas', 'MF-1-800x527-1.jpg'),
+(30, '113234', 'Admin Pengelola', '', '0838220397222', 'adminpengelola', '5d3f2799676bac0e58009e42ecdc4ac4', 'superadmin', 'MF-1-800x527-1.jpg'),
+(31, '3321323', 'Pimpinan', '', '0838220397221', 'pimpinan', '90973652b88fe07d05a4304f0a945de8', 'admin', 'MF-1-800x527-1.jpg');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `barang_keluar`
+-- Indeks untuk tabel `barang_keluar`
 --
 ALTER TABLE `barang_keluar`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `barang_masuk`
+-- Indeks untuk tabel `barang_masuk`
 --
 ALTER TABLE `barang_masuk`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `gudang`
+-- Indeks untuk tabel `gudang`
 --
 ALTER TABLE `gudang`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `jenis_barang`
+-- Indeks untuk tabel `jenis_barang`
 --
 ALTER TABLE `jenis_barang`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `satuan`
+-- Indeks untuk tabel `satuan`
 --
 ALTER TABLE `satuan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tb_supplier`
+-- Indeks untuk tabel `tb_supplier`
 --
 ALTER TABLE `tb_supplier`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+-- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `barang_keluar`
+-- AUTO_INCREMENT untuk tabel `barang_keluar`
 --
 ALTER TABLE `barang_keluar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `barang_masuk`
+-- AUTO_INCREMENT untuk tabel `barang_masuk`
 --
 ALTER TABLE `barang_masuk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT for table `gudang`
+-- AUTO_INCREMENT untuk tabel `gudang`
 --
 ALTER TABLE `gudang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT for table `jenis_barang`
+-- AUTO_INCREMENT untuk tabel `jenis_barang`
 --
 ALTER TABLE `jenis_barang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `satuan`
+-- AUTO_INCREMENT untuk tabel `satuan`
 --
 ALTER TABLE `satuan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `tb_supplier`
+-- AUTO_INCREMENT untuk tabel `tb_supplier`
 --
 ALTER TABLE `tb_supplier`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
