@@ -70,7 +70,7 @@
 						<br>
 
 				</form>
-				<br><center><p>Login Kementerian Keuangan Timor Leste</a></p></center>
+				<br><center><p>Login MINISTÉRIO DAS FINANÇAS TIMOR LESTE</a></p></center>
 
 
 			</div>

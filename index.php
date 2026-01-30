@@ -58,15 +58,6 @@ mysqli_report (MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
     <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-      <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
-        <div class="sidebar-brand-icon">
-          <!-- <i class="fas fa-building"></i> -->
-           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Ministry_of_Finance_%28East_Timor%29.jpg/250px-Ministry_of_Finance_%28East_Timor%29.jpg" alt="" width="50px">
-        </div>
-        <div class="sidebar-brand-text mx-2">Kementerian Keuangan Timor Leste</div>
-      </a>
-
 	  <!-- Divider -->
       <hr class="sidebar-divider my-0">
 	  
@@ -153,7 +144,13 @@ mysqli_report (MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 		<!-- Topbar -->
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
+          <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
+            <div class="sidebar-brand-icon">
+              <!-- <i class="fas fa-building"></i> -->
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Ministry_of_Finance_%28East_Timor%29.jpg/250px-Ministry_of_Finance_%28East_Timor%29.jpg" alt="" width="50px">
+            </div>
+            <div class="sidebar-brand-text mx-2">MINISTÉRIO DAS FINANÇAS TIMOR LESTE</div>
+          </a>
           <!-- Sidebar Toggle (Topbar) -->
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
@@ -350,7 +347,7 @@ mysqli_report (MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Kementerian Keuangan Timor Leste
+            <span>Copyright &copy; MINISTÉRIO DAS FINANÇAS TIMOR LESTE
             </span>
           </div>
         </div>

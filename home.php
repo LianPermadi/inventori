@@ -9,7 +9,7 @@
             <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
            
           </div>
-	 <marquee><h2>Selamat Datang di Sistem Informasi Inventory Barang | Kementerian Keuangan Timor Leste
+	 <marquee><h2>Selamat Datang di Sistem Informasi Inventory Barang | MINISTÉRIO DAS FINANÇAS TIMOR LESTE
    </marquee></h2>
 		  <br></br>
 
